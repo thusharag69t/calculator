@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: #111;
+}
+
+.logo {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+}
+
+/* Hero */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #222, #333);
+    color: white;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+header h3 {
+    margin: 10px 0;
+    font-weight: normal;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #00adb5;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #007f85;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* Skills */
+.skill-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill {
+    background: #00adb5;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+/* Projects */
+.project-card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+#contact p {
+    margin: 10px 0;
+}
+
+/* Footer */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 10px;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
+/* Social Section */
+.social-links {
+    margin-top: 20px;
+}
+
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    background-color: #0077b5;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+}
+
+.linkedin-btn img {
+    width: 32px;      /* Increased size */
+    height: 32px;
+}
+
+.linkedin-btn:hover {
+    background-color: #005f8d;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.5);
+}
