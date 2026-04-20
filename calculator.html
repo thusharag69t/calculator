@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendly Calc</title>
+    <style>
+        /* Modern & Clean Style */
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 320px;
+            text-align: center;
+        }
+
+        h2 { color: #333; margin-top: 0; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Keeps padding inside width */
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007AFF; /* Apple Blue */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+
+        button:hover { background: #0056b3; }
+
+        #output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #555;
+            font-weight: 500;
+            display: none; /* Hidden until calculated */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>👋 Hello!</h2>
+    <input type="number" id="n1" placeholder="First number">
+    
+    <select id="op">
+        <option value="+">Add (+)</option>
+        <option value="-">Subtract (-)</option>
+        <option value="*">Multiply (*)</option>
+        <option value="/">Divide (/)</option>
+    </select>
+
+    <input type="number" id="n2" placeholder="Second number">
+    
+    <button onclick="calc()">Calculate</button>
+
+    <div id="output"></div>
+</div>
+
+<script>
+    function calc() {
+        const a = parseFloat(document.getElementById('n1').value);
+        const b = parseFloat(document.getElementById('n2').value);
+        const op = document.getElementById('op').value;
+        const box = document.getElementById('output');
+
+        if (isNaN(a) || isNaN(b)) {
+            alert("Please enter numbers!");
+            return;
+        }
+
+        let res;
+        if (op === "+") res = a + b;
+        else if (op === "-") res = a - b;
+        else if (op === "*") res = a * b;
+        else if (op === "/") res = b === 0 ? "Cannot divide by 0" : a / b;
+
+        box.style.display = "block";
+        box.innerHTML = `Result: <strong>${res}</strong><br>Have a great day!`;
+    }
+</script>
+
+</body>
+</html>
 
